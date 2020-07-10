@@ -34,7 +34,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnDisconnected(DisconnectCause cause)
     {
         connectButton.interactable = false;
-        infoText.text = "온라인 마스터서버와 연결 실패";
+        infoText.text = "온라인 마스터서버와 연결 실패 \n 접속 재시도 중";
         PhotonNetwork.ConnectUsingSettings();
     }
 

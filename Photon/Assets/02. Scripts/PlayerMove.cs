@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMove : MonoBehaviourPun
 {
     public float speed = 5.0f; //이동속도
     CharacterController cc; //캐릭터컨트롤러 컴포넌트
@@ -20,6 +21,7 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+        if (!photonView.IsMine) return;
         //플레이어 이동
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
